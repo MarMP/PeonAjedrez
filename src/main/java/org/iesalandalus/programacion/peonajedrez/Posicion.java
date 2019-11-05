@@ -5,6 +5,13 @@ public class Posicion {
 	private int fila;
 	private char columna;
 
+	//Constructor con parámetros
+	public Posicion (int fila, char columna) {
+		setFila(fila);
+		setColumna(columna);
+	}
+	
+	
 	public int getFila() {
 		return fila;
 	}

@@ -6,11 +6,23 @@ public class Peon {
 	private Posicion posicion;
 
 	// Peón por defecto negro en la posición 7d
-	public Peon () {
+	public Peon() {
 		this.color = Color.NEGRO;
-		this.posicion = new Posicion (7,'d');
-	} 
-	
+		this.posicion = new Posicion(7, 'd');
+	}
+
+	// Constructor con parámetro color
+	public Peon(Color color) {
+		setColor(color);
+
+		if (color.equals(Color.BLANCO)) {
+			this.posicion = new Posicion(2, 'd');
+		}
+		if (color.equals(Color.NEGRO)) {
+			this.posicion = new Posicion(7, 'd');
+		}
+	}
+
 	public Color getColor() {
 		return color;
 	}

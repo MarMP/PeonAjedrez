@@ -5,6 +5,12 @@ public class Peon {
 	private Color color;
 	private Posicion posicion;
 
+	// Peón por defecto negro en la posición 7d
+	public Peon () {
+		this.color = Color.NEGRO;
+		this.posicion = new Posicion (7,'d');
+	} 
+	
 	public Color getColor() {
 		return color;
 	}

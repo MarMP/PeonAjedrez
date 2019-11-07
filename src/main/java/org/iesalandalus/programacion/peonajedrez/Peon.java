@@ -23,6 +23,21 @@ public class Peon {
 		}
 	}
 
+	// Constructor con param color y columna inicial
+	public Peon(Color color, char columnaInicial) {
+		setColor(color);
+
+		if (columnaInicial < 'a' || columnaInicial > 'h') {
+			throw new IllegalArgumentException("ERROR: Columna no válida.");
+		}
+		if (color.equals(Color.BLANCO)) {
+			this.posicion = new Posicion(2, columnaInicial);
+		}
+		if (color.equals(Color.NEGRO)) {
+			this.posicion = new Posicion(7, columnaInicial);
+		}
+	}
+	
 	public Color getColor() {
 		return color;
 	}

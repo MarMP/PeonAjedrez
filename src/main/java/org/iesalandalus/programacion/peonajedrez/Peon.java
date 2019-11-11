@@ -50,7 +50,7 @@ public class Peon {
 
 	private void setColor(Color color) {
 		if (color == null) {
-			throw new IllegalArgumentException("ERROR: No se puede asignar un color nulo.");
+			throw new NullPointerException("ERROR: No se puede asignar un color nulo.");
 		}
 
 		this.color = color;
@@ -97,11 +97,67 @@ public class Peon {
 					throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
 				}
 				break;
+			default:
+				break;
 		}
 	}
-	
-	
 
-	
-	
+	public void mover(int pasos) throws OperationNotSupportedException {
+		boolean salida = true; // variable booleana que controla si el peon sale de la posición de inicio o no
+
+		if (salida == true) {
+			switch (pasos) {
+			case 1:
+				try {
+					if (color.equals(color.BLANCO)) {
+						posicion = new Posicion(posicion.getFila() + 1, (char) (posicion.getColumna()));
+
+					}
+					if (color.equals(color.NEGRO)) {
+						posicion = new Posicion(posicion.getFila() - 1, (char) (posicion.getColumna()));
+					}
+
+				} catch (IllegalArgumentException e) {
+					throw new OperationNotSupportedException("ERROR: El peón sólo se puede mover 1 o 2 pasos.");
+				}
+				break;
+
+			case 2:
+				try {
+					if (color.equals(color.BLANCO)) {
+						posicion = new Posicion(posicion.getFila() + 2, (char) (posicion.getColumna()));
+						salida = false;
+					}
+					if (color.equals(color.NEGRO)) {
+						posicion = new Posicion(posicion.getFila() - 2, (char) (posicion.getColumna()));
+						salida = false;
+					}
+				} catch (IllegalArgumentException e) {
+					throw new OperationNotSupportedException("ERROR: El peón sólo se puede mover 1 o 2 pasos.");
+				}
+				break;
+			default:
+				break;
+			}
+		} else {
+			switch (pasos) {
+			case 1:
+				try {
+					if (color.equals(color.BLANCO)) {
+						posicion = new Posicion(posicion.getFila() + 1, (char) (posicion.getColumna()));
+					}
+					if (color.equals(color.NEGRO)) {
+						posicion = new Posicion(posicion.getFila() - 1, (char) (posicion.getColumna()));
+					}
+				} catch (IllegalArgumentException e) {
+					throw new OperationNotSupportedException("ERROR: El peón sólo se puede mover 2 pasos cuando se encuentra en la casilla inicial.");
+				}
+				break;
+			default:
+				break;
+			}
+		}
+
+	}
+
 }

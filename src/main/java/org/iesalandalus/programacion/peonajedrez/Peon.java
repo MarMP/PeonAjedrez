@@ -105,22 +105,24 @@ public class Peon {
 	}
 
 	public void mover(int pasos) throws OperationNotSupportedException {
-		boolean salida = true; // variable booleana que controla si el peon sale de la posición de inicio o no
 
-		if (salida == true) {
+		// boolean salida = true; // variable booleana que controla si el peon sale de
+		// la posición de inicio o no
+
+		// if (salida == true) {
+		if (posicion.getFila() == 2 || posicion.getFila() == 7) {
 			switch (pasos) {
 			case 1:
 				try {
 					if (color.equals(color.BLANCO)) {
 						posicion = new Posicion(posicion.getFila() + 1, (char) (posicion.getColumna()));
-
 					}
 					if (color.equals(color.NEGRO)) {
 						posicion = new Posicion(posicion.getFila() - 1, (char) (posicion.getColumna()));
 					}
 
 				} catch (IllegalArgumentException e) {
-					throw new OperationNotSupportedException("ERROR: El peón sólo se puede mover 1 o 2 pasos.");
+					throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
 				}
 				break;
 
@@ -128,19 +130,21 @@ public class Peon {
 				try {
 					if (color.equals(color.BLANCO)) {
 						posicion = new Posicion(posicion.getFila() + 2, (char) (posicion.getColumna()));
-						salida = false;
+						// salida = false;
 					}
 					if (color.equals(color.NEGRO)) {
 						posicion = new Posicion(posicion.getFila() - 2, (char) (posicion.getColumna()));
-						salida = false;
+						// salida = false;
 					}
 				} catch (IllegalArgumentException e) {
-					throw new OperationNotSupportedException("ERROR: El peón sólo se puede mover 1 o 2 pasos.");
+					throw new OperationNotSupportedException(
+							"ERROR: El peón sólo se puede mover 2 pasos cuando se encuentra en la casilla inicial.");
 				}
 				break;
 			default:
-				break;
+				throw new OperationNotSupportedException("ERROR: El peón sólo se puede mover 1 o 2 pasos.");
 			}
+
 		} else {
 			switch (pasos) {
 			case 1:
@@ -152,14 +156,14 @@ public class Peon {
 						posicion = new Posicion(posicion.getFila() - 1, (char) (posicion.getColumna()));
 					}
 				} catch (IllegalArgumentException e) {
-					throw new OperationNotSupportedException("ERROR: El peón sólo se puede mover 2 pasos cuando se encuentra en la casilla inicial.");
+					throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
 				}
 				break;
 			default:
-				break;
+				throw new OperationNotSupportedException(
+						"ERROR: El peón sólo se puede mover 2 pasos cuando se encuentra en la casilla inicial.");
 			}
 		}
-
 	}
 
 	@Override
@@ -178,6 +182,14 @@ public class Peon {
 		Peon other = (Peon) obj;
 		return color == other.color && Objects.equals(posicion, other.posicion);
 	}
+
+	@Override
+	public String toString() {
+		return "fila=" + posicion.getFila() + ", columna=" + posicion.getColumna() + ", color=" + color ;
+	}
+	
+	
+	
 	
 	
 

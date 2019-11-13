@@ -33,6 +33,15 @@ public class MainApp {
 			System.out.println(peon.toString());
 		}
 	}
+	
+	private static void mostrarMenu() {
+		  System.out.println("MENÚ DEL PROGRAMA: ");
+		  System.out.println("1: Crear peón por defecto.");
+		  System.out.println("2. Crear peón de un color: blanco o negro.");
+		  System.out.println("3. Crear peón de un color y en una columna inicial dada.");
+		  System.out.println("4. Mover peón.");
+		  System.out.println("5. Salir");
+		}
 
 
 }

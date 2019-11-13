@@ -52,5 +52,34 @@ public class MainApp {
 
 		return opcion;
 	}
+	
+	private static Color elegirColor() {
+		Color color = null;
+		boolean validarColor = false;
+
+		do {
+			System.out.println("Escoja un color para su peón: blanco o negro.");
+			System.out.println("1. Color blanco.");
+			System.out.println("2. Color negro.");
+			System.out.println("Introduzca la opción del color.");
+			System.out.println(" ");
+			int opcion = Entrada.entero();
+			switch (opcion) {
+			case 1:
+				color = Color.BLANCO;
+				validarColor = true;
+				break;
+			case 2:
+				color = Color.NEGRO;
+				validarColor = true;
+				break;
+			default:
+				System.out.println("Opción errónea.");
+			}
+
+		} while (!validarColor);
+
+		return color;
+	}
 
 }

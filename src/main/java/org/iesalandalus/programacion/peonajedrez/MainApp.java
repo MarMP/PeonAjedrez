@@ -162,8 +162,10 @@ public class MainApp {
 		peon = new Peon();
 		System.out.println("El peón en: " + peon.toString());
 	}
-	
-	
-	
+
+	private static void crearPeonColor() {
+		peon = new Peon(elegirColor());
+		System.out.println("El peón en: " + peon.toString());
+	}
 	
 }

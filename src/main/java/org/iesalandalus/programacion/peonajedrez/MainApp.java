@@ -92,4 +92,13 @@ public class MainApp {
 		return columnaInicial;
 	}
 
+	private static void mostrarMenuMovimientos() {
+		System.out.println("Movimientos posibles: ");
+		System.out.println("1: Avanzar 1 paso el peón.");
+		System.out.println("2. Avanzar 2 pasos el peón.");
+		System.out.println("3. Mover izquierda.");
+		System.out.println("4. Mover derecha.");
+		System.out.println(" ");
+	}
+
 }

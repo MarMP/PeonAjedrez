@@ -110,4 +110,57 @@ public class MainApp {
 
 		return opcion;
 	}
+	
+	private static void realizarMovimiento(int movimiento) {
+
+		if (direccion == null) {
+			System.out
+					.println("Antes de mover el peón debe crear uno. Escoja entre las diferentes opciones del menú. ");
+			System.out.println(" ");
+		} else {
+			switch (movimiento) {
+			case 1:
+				try {
+					peon.mover(1);
+					System.out.println("El peón se ha movido. Su posición ahora es: " + peon.toString());
+				} catch (OperationNotSupportedException e) {
+					e.printStackTrace();
+				}
+				break;
+			case 2:
+				try {
+					peon.mover(2);
+					System.out.println("El peón se ha movido. Su posición ahora es: " + peon.toString());
+				} catch (OperationNotSupportedException e) {
+					e.printStackTrace();
+				}
+				break;
+			case 3:
+				try {
+					peon.mover(direccion.IZQUIERDA);
+					System.out.println("El peón se ha movido. Su posición ahora es: " + peon.toString());
+				} catch (OperationNotSupportedException e) {
+					e.printStackTrace();
+				}
+				break;
+			case 4:
+				try {
+					peon.mover(direccion.DERECHA);
+					System.out.println("El peón se ha movido. Su posición ahora es: " + peon.toString());
+				} catch (OperationNotSupportedException e) {
+					e.printStackTrace();
+				}
+				break;
+			default:
+				System.out.println("Opción incorrecta.");
+			}
+		}
+
+	}	
+	
+	
+	
+	
+	
+	
 }

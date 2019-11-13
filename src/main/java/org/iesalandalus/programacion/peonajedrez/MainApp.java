@@ -178,4 +178,25 @@ public class MainApp {
 		realizarMovimiento(elegirMovimiento());
 	}
 
+	private static void ejecutarOpcion(int opcion) {
+		switch (opcion) {
+		case 1:
+			crearPeonDefecto();
+			break;
+		case 2:
+			crearPeonColor();
+			break;
+		case 3:
+			crearPeonColorColumna();
+			break;
+		case 4:
+			mover();
+			break;
+		case 5:
+			salir = true;
+			break;
+		default:
+			System.out.println("Opción incorrecta.");
+		}
+	}
 }

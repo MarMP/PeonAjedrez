@@ -101,4 +101,13 @@ public class MainApp {
 		System.out.println(" ");
 	}
 
+	private static int elegirMovimiento() {
+		int opcion;
+		do {
+			System.out.println("Por favor, introduzca la opción del menú que desee realizar: ");
+			opcion = Entrada.entero();
+		} while (opcion < 1 || opcion > 4);
+
+		return opcion;
+	}
 }

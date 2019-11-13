@@ -168,4 +168,9 @@ public class MainApp {
 		System.out.println("El peón en: " + peon.toString());
 	}
 	
+	private static void crearPeonColorColumna() {
+		peon = new Peon(elegirColor(), elegirColumnaInicial());
+		System.out.println("El peón en: " + peon.toString());
+	}
+
 }

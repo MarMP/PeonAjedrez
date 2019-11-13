@@ -173,4 +173,9 @@ public class MainApp {
 		System.out.println("El peón en: " + peon.toString());
 	}
 
+	private static void mover() {
+		mostrarMenuMovimientos();
+		realizarMovimiento(elegirMovimiento());
+	}
+
 }

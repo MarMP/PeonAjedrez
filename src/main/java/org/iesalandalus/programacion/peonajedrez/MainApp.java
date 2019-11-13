@@ -18,8 +18,8 @@ public class MainApp {
 		mostrarPeon();
 
 		while (!salir) {
-			//mostrarMenu();
-			//ejecutarOpcion(elegirOpcion());
+			mostrarMenu();
+			ejecutarOpcion(elegirOpcion());
 		}
 
 	}
@@ -33,7 +33,7 @@ public class MainApp {
 			System.out.println(peon.toString());
 		}
 	}
-	
+
 	private static void mostrarMenu() {
 		System.out.println("MENÚ DEL PROGRAMA: ");
 		System.out.println("1: Crear peón por defecto.");
@@ -52,7 +52,7 @@ public class MainApp {
 
 		return opcion;
 	}
-	
+
 	private static Color elegirColor() {
 		Color color = null;
 		boolean validarColor = false;
@@ -81,7 +81,7 @@ public class MainApp {
 
 		return color;
 	}
-	
+
 	private static char elegirColumnaInicial() {
 		char columnaInicial = 'a';
 		do {
@@ -110,10 +110,10 @@ public class MainApp {
 
 		return opcion;
 	}
-	
+
 	private static void realizarMovimiento(int movimiento) {
 
-		if (direccion == null) {
+		if (peon == null) {
 			System.out
 					.println("Antes de mover el peón debe crear uno. Escoja entre las diferentes opciones del menú. ");
 			System.out.println(" ");
@@ -156,8 +156,8 @@ public class MainApp {
 			}
 		}
 
-	}	
-	
+	}
+
 	private static void crearPeonDefecto() {
 		peon = new Peon();
 		System.out.println("El peón en: " + peon.toString());
@@ -167,7 +167,7 @@ public class MainApp {
 		peon = new Peon(elegirColor());
 		System.out.println("El peón en: " + peon.toString());
 	}
-	
+
 	private static void crearPeonColorColumna() {
 		peon = new Peon(elegirColor(), elegirColumnaInicial());
 		System.out.println("El peón en: " + peon.toString());

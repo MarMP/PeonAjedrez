@@ -81,5 +81,15 @@ public class MainApp {
 
 		return color;
 	}
+	
+	private static char elegirColumnaInicial() {
+		char columnaInicial = 'a';
+		do {
+			System.out.println("Introduzca una columna inicial válida: a-h");
+			columnaInicial = Entrada.caracter();
+		} while (columnaInicial < 'a' || columnaInicial > 'h');
+
+		return columnaInicial;
+	}
 
 }

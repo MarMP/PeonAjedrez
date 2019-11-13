@@ -158,7 +158,10 @@ public class MainApp {
 
 	}	
 	
-	
+	private static void crearPeonDefecto() {
+		peon = new Peon();
+		System.out.println("El peón en: " + peon.toString());
+	}
 	
 	
 	
